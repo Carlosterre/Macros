@@ -1,0 +1,52 @@
+Sub Copiar()
+
+current_root = ThisWorkbook.Path
+    Path = current_root & "\"
+    MyWorkbook = ThisWorkbook.Name
+    
+Application.ScreenUpdating = False
+Application.DisplayAlerts = False
+
+Workbooks.Open Filename:=Path & "01.xlsx"
+    
+    Windows("01.xlsx").Activate
+    Sheets("Hoja1").Select
+    Range("A1").Select
+    Selection.Copy
+    Windows("Copiar.xlsm").Activate
+    Range("A1").Select
+    Selection.PasteSpecial Paste:=xlPasteValuesAndNumberFormats
+    
+    Windows("01.xlsx").Activate
+    Sheets("Hoja1").Select
+    Range("A2").Select
+    Selection.Copy
+    Windows("Copiar.xlsm").Activate
+    Range("A2").Select
+    Selection.PasteSpecial Paste:=xlPasteValuesAndNumberFormats
+
+    Windows("01.xlsx").Activate
+    Sheets("Hoja2").Select
+    Range("A1").Select
+    Selection.Copy
+    Windows("Copiar.xlsm").Activate
+    Range("A3").Select
+    Selection.PasteSpecial Paste:=xlPasteValuesAndNumberFormats
+
+    Windows("01.xlsx").Activate
+    Sheets("Hoja1").Select
+    Range("A3:C4").Select
+    Selection.Copy
+    Windows("Copiar.xlsm").Activate
+    Range("A4:C5").Select
+    Selection.PasteSpecial Paste:=xlPasteValuesAndNumberFormats
+
+Range("A1").Select
+
+Windows("01.xlsx").Activate
+ActiveWindow.Close True
+
+Application.ScreenUpdating = True
+Application.DisplayAlerts = True
+
+End Sub
