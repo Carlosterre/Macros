@@ -1,2 +1,2 @@
 # Macros
-Some useful macros in MICROSOFT EXCEL
+Some useful macros in Microsoft EXCEL
